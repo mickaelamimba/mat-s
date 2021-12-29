@@ -1,0 +1,22 @@
+    <div class="flex pb-[20px] flex-wrap border-b border-1 items-center ">
+        <a class="flex align-items-center  text-white" href="">
+            <span class="text-4xl">Materiel-S</span>
+        </a>
+    </div>
+    <nav id="nav" class="flex flex-col shrink-0 pt-[20px] text-white  ">
+
+        <ul>
+            <li class="relative">
+                <a class="relative pt-[8px] pb-[8px] flex flex-wrap pl-0 pr-0 text-sm font-medium leading-loose" href="{{ path('home') }}" aria-current="page">Home</a>
+            </li>
+            <li class="relative">
+
+                <a class="relative pt-[8px] pb-[8px] flex flex-wrap pl-0 pr-0 text-sm font-medium leading-loose  " href="{{ path('confiscation_index') }}">Matériel</a>
+                    <ul class="pl-[34px]">
+                        <li> <a class="block " href="{{ path('confiscation_new') }}" >Ajouter un matériel</a> </li>
+                    </ul>
+            </li>
+        </ul>
+
+    </nav>
+

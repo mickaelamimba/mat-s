@@ -1,0 +1,17 @@
+{% form_theme form 'form/theme.html.twig' %}
+{{ form_start(form) }}
+
+ {% for material in form.materiel %}
+     {{ include("ready/material/_form.html.twig", {form: material }) }}
+
+ {% endfor %}
+
+    <div class="grid md:grid-cols-2">
+        {{ form_row(form.nigend) }}
+        {{ form_row(form.userName) }}
+    </div>
+
+
+
+
+ {{ form_end(form) }}

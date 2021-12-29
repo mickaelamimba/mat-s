@@ -1,0 +1,13 @@
+<tr>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ confiscation.confiscation.pvNumber }}</td>
+    <td  class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ confiscation.imeiNumber }}</td>
+    <td  class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ confiscation.marque }}</td>
+    <td  class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ confiscation.observation }}</td>
+    <td  class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ confiscation.state |formatData(confiscation.state) }}</td>
+    <td  class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ confiscation.status |formatData(confiscation.status) }}</td>
+    <td  class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ confiscation.type }}</td>
+    <td>
+        <a href="{{ path('confiscation_show', {'id': confiscation.id}) }}">show</a>
+        <a href="{{ path('confiscation_edit', {'id': confiscation.confiscation.id}) }}">edit</a>
+    </td>
+</tr>

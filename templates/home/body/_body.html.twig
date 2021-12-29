@@ -1,0 +1,20 @@
+<tr>
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ confiscation.confiscation.pvNumber }}</td>
+    <td  class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ confiscation.imeiNumber }}</td>
+    <td  class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ confiscation.state |formatData(confiscation.state)  }}</td>
+    <td  class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ confiscation.status |formatData(confiscation.status) }}</td>
+    <td  class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ confiscation.type }}</td>
+    <td>
+        {% if confiscation.state == 'STOCK' %}
+            <a class="inline-flex items-center px-4 py-2 border border-yellow-300 shadow-sm text-sm font-medium rounded-md text-white bg-yellow-600 hover:bg-yellow-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500" href="{{ path('ready_new', {'id': confiscation.id}) }}">Affecté</a>
+            <a class="inline-flex items-center px-4 py-2 border border-red-300 shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" href="{{ path('confiscation_edit', {'id': confiscation.id}) }}"> À détruire</a>
+        {% endif %}
+        {% if confiscation.state == 'READY' %}
+            <a class="inline-flex items-center px-4 py-2 border border-yellow-300 shadow-sm text-sm font-medium rounded-md text-white bg-yellow-600 hover:bg-yellow-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500" href="{{ path('confiscation_edit', {'id': confiscation.id}) }}">Retour stock</a>
+        {% endif %}
+
+
+
+
+    </td>
+</tr>

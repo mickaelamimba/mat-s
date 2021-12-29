@@ -1,0 +1,17 @@
+$primary: darken(#428bca, 20%);
+.sidebar{
+
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-box-pack: justify;
+  transition: .5s all;
+  width: 253px;
+}
+// the ~ allows you to reference things in node_modules
+
+
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";

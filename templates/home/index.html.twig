@@ -1,0 +1,131 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+
+   <div class="flex flex-col justify-between ">
+       <div class="mb-4">
+           <h3 class="text-4xl font-medium">Gestion Matériel</h3>
+
+       </div>
+       <div class="relative mb-3">
+           <div class="absolute inset-0 flex items-center" aria-hidden="true">
+               <div class="w-full border-t border-gray-300"></div>
+           </div>
+           <div class="relative flex justify-center">
+            <span class="px-2 bg-white text-sm text-gray-500">
+              Materiel en Stock
+            </span>
+           </div>
+       </div>
+       <div class="flex flex-col mb-4">
+           <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+               <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                   <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+
+                       <table class="min-w-full divide-y divide-gray-200">
+                           {{ include("home/thead/_thead.html.twig") }}
+                           <tbody class="bg-gray-50">
+                           {% for stock in stocks %}
+                               {{ include("home/body/_body.html.twig",{confiscation:stock}) }}
+                           {% else %}
+                               <tr>
+                                   <td colspan="6" class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                       Pas de matériel en stock
+                                   </td>
+
+                               </tr>
+                           {% endfor %}
+
+                           </tbody>
+                       </table>
+                   </div>
+
+               </div>
+
+
+           </div>
+
+       </div>
+       <div class="relative mb-3">
+           <div class="absolute inset-0 flex items-center" aria-hidden="true">
+               <div class="w-full border-t border-gray-300"></div>
+           </div>
+           <div class="relative flex justify-center">
+            <span class="px-2 bg-white text-sm text-gray-500">
+              Matériel affecté
+            </span>
+           </div>
+       </div>
+       <div class="flex flex-col mb-4">
+           <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+               <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                   <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                       <table class="min-w-full divide-y divide-gray-200">
+                           {{ include("home/thead/_thead.html.twig") }}
+                           <tbody class="bg-gray-50">
+                           {% for ready in readys %}
+                               {{ include("home/body/_body.html.twig",{confiscation:ready}) }}
+                           {% else %}
+                               <tr>
+                                   <td colspan="6" class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                       Pas de matériel affecté
+                                   </td>
+
+                               </tr>
+                           {% endfor %}
+
+                           </tbody>
+                       </table>
+
+                   </div>
+               </div>
+           </div>
+
+
+       </div>
+       <div class="relative mb-3">
+           <div class="absolute inset-0 flex items-center" aria-hidden="true">
+               <div class="w-full border-t border-gray-300"></div>
+           </div>
+           <div class="relative flex justify-center">
+            <span class="px-2 bg-white text-sm text-gray-500">
+             Matériel à détruire
+            </span>
+           </div>
+       </div>
+       <div class="flex flex-col mb-4">
+           <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+               <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                   <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+
+                           <table class="min-w-full divide-y divide-gray-200">
+                               {{ include("home/thead/_thead.html.twig") }}
+                               <tbody class="bg-gray-50">
+                               {% for beingdestroy in beingdestroys %}
+                                   {{ include("home/body/_body.html.twig",{confiscation:beingdestroy}) }}
+                               {% else %}
+                                   <tr>
+                                       <td colspan="6" class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                           Pas de matériel en cours de destruction
+                                       </td>
+
+                                   </tr>
+                               {% endfor %}
+                               </tbody>
+                           </table>
+                   </div>
+               </div>
+
+           </div>
+
+       </div>
+   </div>
+
+
+
+
+
+{% endblock %}
